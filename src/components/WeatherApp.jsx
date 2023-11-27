@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useLayoutEffect } from "react";
 
 import CloundIMG from "../assets/cloud.png";
 import HumidityIMG from "../assets/humidity.png";
@@ -27,6 +27,10 @@ function WeatherApp() {
 			setDataRecieved(false);
 		}
 	};
+
+	useLayoutEffect(() => {
+		fetchData();
+	}, []);
 
 	return (
 		<div className="app-container">
